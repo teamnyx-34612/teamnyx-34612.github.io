@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Meet the Team | FTC Nyx 34612</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --primary:#7c3aed;
+  --dark:#0f0f14;
+  --darker:#09090c;
+  --light:#e5e7eb;
+  --gray:#9ca3af;
+  --card:rgba(255,255,255,0.04);
+  --border:rgba(255,255,255,0.10);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:Inter,system-ui,Segoe UI,Arial,sans-serif;
+  background: radial-gradient(1200px 600px at 20% 10%, rgba(124,58,237,0.18), transparent 60%),
+              radial-gradient(900px 500px at 85% 30%, rgba(124,58,237,0.12), transparent 55%),
+              linear-gradient(135deg, var(--darker), var(--dark));
+  color:var(--light);
+  line-height:1.6;
+}
+
+nav{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:1.25rem 5%;
+  background:rgba(0,0,0,0.45);
+  backdrop-filter:blur(10px);
+  position:sticky;top:0;z-index:50;
+  border-bottom:1px solid rgba(255,255,255,0.06);
+}
+nav h1{
+  font-family:Orbitron,sans-serif;
+  font-size:1.2rem;color:var(--primary);letter-spacing:0.5px;
+}
+nav ul{list-style:none;display:flex;gap:1.5rem;flex-wrap:wrap}
+nav a{color:var(--light);text-decoration:none;font-weight:500;opacity:0.92;transition:0.2s}
+nav a:hover{color:var(--primary);opacity:1}
+
+header{
+  padding:3.5rem 10% 1.5rem;
+  text-align:left;
+}
+.kicker{
+  font-family:Orbitron,sans-serif;
+  color:var(--primary);
+  letter-spacing:1px;
+  text-transform:uppercase;
+  font-size:0.9rem;
+  margin-bottom:0.75rem;
+}
+header h2{
+  font-family:Orbitron,sans-serif;
+  font-size:2.6rem;
+  margin-bottom:0.75rem;
+}
+header p{
+  max-width:820px;
+  color:var(--gray);
+}
+
+.controls{
+  padding:1rem 10% 0;
+  display:flex;gap:0.75rem;flex-wrap:wrap;align-items:center;
+}
+.search{
+  flex:1 1 260px;
+  display:flex;gap:0.5rem;align-items:center;
+  background:rgba(0,0,0,0.30);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:12px;
+  padding:0.7rem 0.9rem;
+}
+.search input{
+  width:100%;
+  background:transparent;border:none;outline:none;
+  color:var(--light);
+  font-size:0.95rem;
+}
+.pills{
+  display:flex;gap:0.5rem;flex-wrap:wrap;
+}
+.pill{
+  border:1px solid rgba(255,255,255,0.10);
+  background:rgba(255,255,255,0.03);
+  color:var(--light);
+  padding:0.55rem 0.85rem;
+  border-radius:999px;
+  cursor:pointer;
+  font-weight:600;
+  font-size:0.85rem;
+  transition:0.2s;
+  user-select:none;
+}
+.pill:hover{border-color:rgba(124,58,237,0.6);background:rgba(124,58,237,0.12)}
+.pill.active{background:rgba(124,58,237,0.22);border-color:rgba(124,58,237,0.75)}
+
+main{padding:2rem 10% 4rem}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+  gap:1.25rem;
+}
+
+.card{
+  background:var(--card);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:16px;
+  overflow:hidden;
+  transition:0.25s;
+  position:relative;
+}
+.card:hover{
+  transform:translateY(-4px);
+  border-color:rgba(124,58,237,0.55);
+  background:rgba(124,58,237,0.10);
+}
+.top{
+  display:flex;
+  gap:1rem;
+  padding:1.1rem 1.1rem 0.9rem;
+  align-items:center;
+}
+.avatar{
+  width:74px;height:74px;border-radius:16px;
+  border:1px solid rgba(255,255,255,0.14);
+  background:rgba(0,0,0,0.25);
+  object-fit:cover;
+  flex:0 0 auto;
+}
+.name{font-weight:800;font-size:1.05rem}
+.role{
+  color:var(--primary);
+  font-weight:700;
+  font-size:0.9rem;
+  margin-top:0.2rem;
+}
+.meta{
+  padding:0 1.1rem 1.1rem;
+  color:var(--gray);
+  font-size:0.93rem;
+}
+.tags{
+  display:flex;gap:0.35rem;flex-wrap:wrap;
+  padding:0 1.1rem 1.1rem;
+}
+.tag{
+  font-size:0.75rem;
+  padding:0.25rem 0.55rem;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,0.10);
+  color:rgba(229,231,235,0.92);
+  background:rgba(0,0,0,0.20);
+}
+footer{
+  text-align:center;
+  padding:2rem 1rem;
+  color:var(--gray);
+  background:rgba(0,0,0,0.35);
+  border-top:1px solid rgba(255,255,255,0.06);
+}
+.note{
+  margin-top:0.5rem;
+  font-size:0.9rem;
+  color:rgba(156,163,175,0.95);
+}
+a.smalllink{color:var(--primary);text-decoration:none}
+a.smalllink:hover{text-decoration:underline}
+
+@media (max-width:600px){
+  header{padding:3rem 6% 1rem}
+  .controls, main{padding-left:6%;padding-right:6%}
+  header h2{font-size:2.1rem}
+}
+</style>
+</head>
+
+<body>
+<nav>
+  <h1>NYX 34612</h1>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="robot.html">Robot</a></li>
+    <li><a href="meet.html" aria-current="page">Team</a></li>
+    <li><a href="sponsor.html">Sponsors</a></li>
+  </ul>
+</nav>
+
+<header>
+  <div class="kicker">Meet the Team</div>
+  <h2>The people behind <span style="color:var(--primary)">Nyx 34612</span></h2>
+  <p>
+    Builders, coders, drivers, designers, and storytellers.
+  </p>
+</header>
+
+<section class="controls">
+  <div class="search" title="Search team members">
+    <span style="opacity:0.85">🔎</span>
+    <input id="searchInput" type="text" placeholder="Search by name, role, or bio..." />
+  </div>
+  <div class="pills" aria-label="Role filters">
+    <div class="pill active" data-filter="all">All</div>
+    <div class="pill" data-filter="build">Build</div>
+    <div class="pill" data-filter="code">Code</div>
+    <div class="pill" data-filter="drive">Drive</div>
+    <div class="pill" data-filter="design">Design</div>
+    <div class="pill" data-filter="biz">Biz/Outreach</div>
+  </div>
+</section>
+
+<main>
+  <div class="grid" id="teamGrid">
+
+    <!-- ===== TEMPLATE MEMBERS (15) ===== -->
+    <article class="card" data-tags="lead,biz,design" data-name="Haodong Jiang">
+      <div class="top">
+        <img class="avatar" src="img/members/johnny.webp" alt="Haodong Jiang portrait" onerror="this.src='img/members/placeholder.png'">
+        <div>
+          <div class="name">Haodong Jiang</div>
+          <div class="role">Team Captain • Strategy & Coordination</div>
+        </div>
+      </div>
+      <div class="meta">
+        Keeps Nyx organized from kickoff to champs—runs meeting plans, match strategy, and makes sure every subsystem ships on time.
+      </div>
+      <div class="tags">
+        <span class="tag">Leadership</span><span class="tag">Strategy</span><span class="tag">Planning</span>
+      </div>
+    </article>
+
+    <article class="card" data-tags="code,lead" data-name="Jonah Larsson">
+      <div class="top">
+        <img class="avatar" src="img/members/jonah.webp" alt="Jonah Larsson portrait" onerror="this.src='img/members/placeholder.png'">
+        <div>
+          <div class="name">Jonah Larsson</div>
+          <div class="role">Software Lead • Autonomous</div>
+        </div>
+      </div>
+      <div class="meta">
+        Owns the auto stack: trajectory planning, sensor fusion, tuning, and making the robot do the right thing under pressure.
+      </div>
+      <div class="tags">
+        <span class="tag">Autonomous</span><span class="tag">Vision</span><span class="tag">Controls</span>
+      </div>
+    </article>
+
+    <article class="card" data-tags="build,lead" data-name="Eric Hu">
+      <div class="top">
+        <img class="avatar" src="img/members/erichu.webp" alt="Eric Hu portrait" onerror="this.src='img/members/placeholder.png'">
+        <div>
+          <div class="name">Eric Hu</div>
+          <div class="role">Mechanical Lead • CAD & Fabrication</div>
+        </div>
+      </div>
+      <div class="meta">
+        Turns sketches into reality—drivetrain architecture, arm geometry, and rapid iteration with clean CAD and cleaner builds.
+      </div>
+      <div class="tags">
+        <span class="tag">CAD</span><span class="tag">Fabrication</span><span class="tag">Mechanisms</span>
+      </div>
+    </article>
+
+    <article class="card" data-tags="build" data-name="Justin Jiang">
+      <div class="top">
+        <img class="avatar" src="img/members/justinjiang.webp" alt="Justin Jiang portrait" onerror="this.src='img/members/placeholder.png'">
+        <div>
+          <div class="name">Justin Jiang</div>
+          <div class="role">Mechanical • Drivetrain</div>
+        </div>
+      </div>
+      <div class="meta">
+        Focuses on reliability: chain tension, alignment, hardware standards, and making sure Nyx survives back-to-back matches.
+      </div>
+      <div class="tags">
+        <span class="tag">Drivetrain</span><span class="tag">Reliability</span><span class="tag">Assembly</span>
+      </div>
+    </article>
+
+    <article class="card" data-tags="build,design" data-name="Rigved Gaddam">
+      <div class="top">
+        <img class="avatar" src="img/members/rigved.webp" alt="Rigved Gaddam portrait" onerror="this.src='img/members/placeholder.png'">
+        <div>
+          <div class="name">Rigved Gaddam</div>
+          <div class="role">CAD • Prototyping</div>
+        </div>
+      </div>
+      <div class="meta">
+        Runs fast prototypes and geometry tests—prints parts overnight, validates ideas, and helps pick what’s actually worth building.
+      </div>
+      <div class="tags">
+        <span class="tag">Prototyping</span><span class="tag">3D Print</span><span class="tag">CAD</span>
+      </div>
+    </article>
+
+    <article class="card" data-tags="build" data-name="Oliver Zhang">
+      <div class="top">
+        <img class="avatar" src="img/members/placeholder.png" alt="Oliver Zhang portrait" onerror="this.src='img/members/placeholder.png'">
+        <div>
+          <div class="name">Oliver Zhang</div>
+          <div class="role">Mechanisms • Intake & Scoring</div>
+        </div>
+      </div>
+      <div class="meta">
+        Specializes in end-effector tuning: grip consistency, compliance, and “one motion” scoring for faster cycle times.
+      </div>
+      <div class="tags">
+        <span class="tag">Mechanisms</span><span class="tag">Tuning</span><span class="tag">Cycle Time</span>
+      </div>
+    </article>
+
+    <article class="card" data-tags="code" data-name="Yohan Seare">
+      <div class="top">
+        <img class="avatar" src="img/members/yohan.webp" alt="Yohan Seare portrait" onerror="this.src='img/members/placeholder.png'">
+        <div>
+          <div class="name">Yohan Seare</div>
+          <div class="role">Programming • TeleOp</div>
+        </div>
+      </div>
+      <div class="meta">
+        Makes the robot feel “locked in”: smooth driver controls, failsafes, state machines, and latency-friendly pipelines.
+      </div>
+      <div class="tags">
+        <span class="tag">TeleOp</span><span class="tag">State Machine</span><span class="tag">UX</span>
+      </div>
+    </article>
+
+    <article class="card" data-tags="code" data-name="Nirvan Beniwal">
+      <div class="top">
+        <img class="avatar" src="img/members/nirvan.webp" alt="Nirvan Beniwal portrait" onerror="this.src='img/members/placeholder.png'">
+        <div>
+          <div class="name">Nirvan Beniwal</div>
+          <div class="role">Programming • Vision & Sensors</div>
+        </div>
+      </div>
+      <div class="meta">
+        Works on camera pipelines, AprilTags, and sensor calibration—turning messy real-world data into consistent decisions.
+      </div>
+      <div class="tags">
+        <span class="tag">Vision</span><span class="tag">Sensors</span><span class="tag">Calibration</span>
+      </div>
+    </article>
+
+    <article class="card" data-tags="code" data-name="Cyrus Zhang">
+      <div class="top">
+        <img class="avatar" src="img/members/cyrus.webp" alt="Cyrus Zhang portrait" onerror="this.src='img/members/placeholder.png'">
+        <div>
+          <div class="name">Cyrus Zhang</div>
+          <div class="role">Programming • Testing & QA</div>
+        </div>
+      </div>
+      <div class="meta">
+        Breaks the robot on purpose (so it doesn’t break on-field): test plans, regression checks, and match-ready checklists.
+      </div>
+      <div class="tags">
+        <span class="tag">QA</span><span class="tag">Testing</span><span class="tag">Docs</span>
+      </div>
+    </article>
+
+    <article class="card" data-tags="drive,lead" data-name="Joshua Wang">
+      <div class="top">
+        <img class="avatar" src="img/members/joshua.webp" alt="Joshua Wang portrait" onerror="this.src='img/members/placeholder.png'">
+        <div>
+          <div class="name">Joshua Wang</div>
+          <div class="role">Drive Coach • Match Strategy</div>
+        </div>
+      </div>
+      <div class="meta">
+        Reads the field and calls the plays—coordinates with alliance partners, adjusts cycles, and keeps comms calm.
+      </div>
+      <div class="tags">
+        <span class="tag">Drive Team</span><span class="tag">Strategy</span><span class="tag">Comms</span>
+      </div>
+    </article>
+
+    <article class="card" data-tags="drive" data-name="Ribhav Deep">
+      <div class="top">
+        <img class="avatar" src="img/members/ribhav.webp" alt="Ribhav Deep portrait" onerror="this.src='img/members/placeholder.png'">
+        <div>
+          <div class="name">Ribhav Deep</div>
+          <div class="role">Driver • Precision Control</div>
+        </div>
+      </div>
+      <div class="meta">
+        Master of consistent cycles—focuses on alignment, smooth approaches, and clutch recoveries when things get chaotic.
+      </div>
+      <div class="tags">
+        <span class="tag">Driver</span><span class="tag">Consistency</span><span class="tag">Practice</span>
+      </div>
+    </article>
+
+    <article class="card" data-tags="drive" data-name="Elvin Pan">
+      <div class="top">
+        <img class="avatar" src="img/members/elvin.webp" alt="Elvin Pan portrait" onerror="this.src='img/members/placeholder.png'">
+        <div>
+          <div class="name">Elvin Pan</div>
+          <div class="role">Operator • Scoring Specialist</div>
+        </div>
+      </div>
+      <div class="meta">
+        Runs the superstructure: timing, scoring sequences, and fast swaps between objectives so Nyx never idles.
+      </div>
+      <div class="tags">
+        <span class="tag">Operator</span><span class="tag">Timing</span><span class="tag">Scoring</span>
+      </div>
+    </article>
+
+    <article class="card" data-tags="design" data-name="Dhyan Soni">
+      <div class="top">
+        <img class="avatar" src="img/members/dhyan.jpg" alt="Dhyan Soni portrait" onerror="this.src='img/members/placeholder.png'">
+        <div>
+          <div class="name">Dhyan Soni</div>
+          <div class="role">Design • Branding & Media</div>
+        </div>
+      </div>
+      <div class="meta">
+        Crafts Nyx’s look: graphics, pit layout, social posts, and award visuals that make the engineering story pop.
+      </div>
+      <div class="tags">
+        <span class="tag">Branding</span><span class="tag">Media</span><span class="tag">Awards</span>
+      </div>
+    </article>
+
+    <article class="card" data-tags="biz" data-name="Sathwik Kintada">
+      <div class="top">
+        <img class="avatar" src="img/members/sathwik.JPG" alt="Sathwik Kintada portrait" onerror="this.src='img/members/placeholder.png'">
+        <div>
+          <div class="name">Sathwik Kintada</div>
+          <div class="role">Outreach Lead • Community & Mentorship</div>
+        </div>
+      </div>
+      <div class="meta">
+        Builds community impact—workshops, mentoring, demos, and partnerships that make Nyx bigger than competition day.
+      </div>
+      <div class="tags">
+        <span class="tag">Outreach</span><span class="tag">Mentorship</span><span class="tag">Events</span>
+      </div>
+    </article>
+
+    <article class="card" data-tags="biz,design" data-name="Rudra Joshi">
+      <div class="top">
+        <img class="avatar" src="img/members/rudra.webp" alt="Rudra Joshi portrait" onerror="this.src='img/members/placeholder.png'">
+        <div>
+          <div class="name">Rudra Joshi</div>
+          <div class="role">Business • Sponsors & Finance</div>
+        </div>
+      </div>
+      <div class="meta">
+        Handles sponsorships and budgeting—writes proposals, manages costs, and keeps the team sustainable for every season.
+      </div>
+      <div class="tags">
+        <span class="tag">Sponsors</span><span class="tag">Finance</span><span class="tag">Planning</span>
+      </div>
+    </article>
+
+    <!-- ===== /TEMPLATE MEMBERS ===== -->
+
+  </div>
+</main>
+
+<footer>
+  © 2026 FTC Team Nyx 34612
+</footer>
+
+<script>
+/*
+  Simple filter + search:
+  - data-tags on each card: "build,code,drive,design,biz,lead" etc.
+  - pill filter matches these tags (e.g., 'build' / 'code' / 'drive' / 'design' / 'biz')
+*/
+const pills = document.querySelectorAll(".pill");
+const cards = Array.from(document.querySelectorAll(".card"));
+const searchInput = document.getElementById("searchInput");
+
+let activeFilter = "all";
+let query = "";
+
+function applyFilters() {
+  const q = query.trim().toLowerCase();
+  cards.forEach(card => {
+    const tags = (card.getAttribute("data-tags") || "").toLowerCase();
+    const name = (card.getAttribute("data-name") || "").toLowerCase();
+    const text = card.innerText.toLowerCase();
+
+    const matchesFilter = (activeFilter === "all") || tags.includes(activeFilter);
+    const matchesSearch = !q || name.includes(q) || tags.includes(q) || text.includes(q);
+
+    card.style.display = (matchesFilter && matchesSearch) ? "" : "none";
+  });
+}
+
+pills.forEach(p => {
+  p.addEventListener("click", () => {
+    pills.forEach(x => x.classList.remove("active"));
+    p.classList.add("active");
+    activeFilter = p.dataset.filter;
+    applyFilters();
+  });
+});
+
+searchInput.addEventListener("input", (e) => {
+  query = e.target.value;
+  applyFilters();
+});
+</script>
+
+</body>
+</html>

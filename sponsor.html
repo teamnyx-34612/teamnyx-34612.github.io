@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sponsors | FTC Nyx 34612</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#09090c;
+  --bg2:#11131a;
+  --text:#e5e7eb;
+  --muted:#9ca3af;
+  --primary:#7c3aed;
+  --border:rgba(255,255,255,0.10);
+  --panel:rgba(255,255,255,0.045);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:"Inter",sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(900px 500px at 15% 10%, rgba(124,58,237,0.18), transparent 60%),
+    radial-gradient(700px 450px at 85% 20%, rgba(124,58,237,0.10), transparent 55%),
+    linear-gradient(135deg, var(--bg), var(--bg2));
+  min-height:100vh;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+nav{
+  position:sticky;
+  top:0;
+  z-index:100;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:1.2rem 5%;
+  background:rgba(0,0,0,0.42);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,0.06);
+}
+
+.logo{
+  font-family:"Orbitron",sans-serif;
+  color:var(--primary);
+  font-size:1.2rem;
+  font-weight:700;
+  letter-spacing:0.08em;
+}
+
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:1.5rem;
+  flex-wrap:wrap;
+}
+
+nav a{
+  color:var(--text);
+  font-weight:500;
+  transition:0.2s;
+}
+
+nav a:hover,
+nav a.active{
+  color:var(--primary);
+}
+
+.hero{
+  text-align:center;
+  padding:4rem 10% 2rem;
+}
+
+.hero .eyebrow{
+  font-family:"Orbitron",sans-serif;
+  color:var(--primary);
+  text-transform:uppercase;
+  letter-spacing:0.12em;
+  font-size:0.9rem;
+  margin-bottom:1rem;
+}
+
+.hero h1{
+  font-family:"Orbitron",sans-serif;
+  font-size:clamp(2.2rem, 5vw, 4rem);
+  margin-bottom:1rem;
+}
+
+.hero p{
+  max-width:700px;
+  margin:0 auto;
+  color:var(--muted);
+  line-height:1.7;
+}
+
+.board-section{
+  padding:2rem 10% 5rem;
+}
+
+.sponsor-board{
+  max-width:1100px;
+  margin:0 auto;
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:28px;
+  padding:2rem;
+  box-shadow:0 20px 60px rgba(0,0,0,0.25);
+}
+
+.board-title{
+  text-align:center;
+  margin-bottom:1.5rem;
+}
+
+.board-title h2{
+  font-family:"Orbitron",sans-serif;
+  font-size:1.6rem;
+  margin-bottom:0.5rem;
+}
+
+.board-title p{
+  color:var(--muted);
+}
+
+.logo-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+  gap:1.5rem;
+}
+
+.logo-tile{
+  min-height:260px;
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:22px;
+  padding:1.5rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:0.2s;
+}
+
+.logo-tile:hover{
+  transform:translateY(-4px);
+  border-color:rgba(124,58,237,0.45);
+  background:rgba(124,58,237,0.10);
+}
+
+.logo-tile img{
+  max-width:100%;
+  max-height:180px;
+  object-fit:contain;
+  display:block;
+}
+
+.logo-fallback{
+  text-align:center;
+}
+
+.logo-fallback strong{
+  display:block;
+  font-size:1.2rem;
+  margin-bottom:0.45rem;
+}
+
+.logo-fallback span{
+  color:var(--muted);
+  font-size:0.95rem;
+}
+
+footer{
+  padding:2rem 10%;
+  text-align:center;
+  color:var(--muted);
+  border-top:1px solid rgba(255,255,255,0.06);
+  background:rgba(0,0,0,0.22);
+}
+
+@media (max-width: 640px){
+  nav{
+    padding:1rem 6%;
+  }
+
+  .hero,
+  .board-section,
+  footer{
+    padding-left:6%;
+    padding-right:6%;
+  }
+
+  .sponsor-board{
+    padding:1.2rem;
+  }
+
+  .logo-tile{
+    min-height:220px;
+  }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">NYX 34612</div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="robot.html">Robot</a></li>
+    <li><a href="meet.html">Team</a></li>
+    <li><a href="sponsor.html" class="active">Sponsors</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="eyebrow">Our Sponsor</div>
+  <h1>Sponsor Board</h1>
+  <p>
+    We’re grateful for the support that helps FTC Team Nyx 34612 build, compete, and grow.
+  </p>
+</section>
+
+<section class="board-section">
+  <div class="sponsor-board">
+    <div class="board-title">
+      <h2>Supported By</h2>
+      <p>Replace the image below with your sponsor’s real logo file.</p>
+    </div>
+
+    <div class="logo-grid">
+      <div class="logo-tile">
+        <img
+          src="img/sponsor1.png"
+          alt="Sponsor 1 logo"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+        >
+        <div class="logo-fallback" style="display:none;">
+          <strong>Your Sponsor Name</strong>
+          <span>Place logo at <code>img/sponsors/sponsor1.png</code></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 FTC Team Nyx 34612
+</footer>
+
+</body>
+</html>

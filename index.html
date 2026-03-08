@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FTC Team Nyx 34612</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --primary: #7c3aed;       /* purple accent */
+    --dark: #0f0f14;
+    --darker: #09090c;
+    --light: #e5e7eb;
+    --gray: #9ca3af;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, var(--darker), var(--dark));
+    color: var(--light);
+    line-height: 1.6;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+}
+
+nav h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.4rem;
+    color: var(--primary);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--light);
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--primary);
+}
+
+.hero {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.hero h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero span {
+    color: var(--primary);
+}
+
+.hero p {
+    max-width: 600px;
+    color: var(--gray);
+    margin-bottom: 2rem;
+}
+
+.button {
+    padding: 0.8rem 1.6rem;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: #6d28d9;
+    transform: translateY(-2px);
+}
+
+.section {
+    padding: 5rem 10%;
+    text-align: center;
+}
+
+.section h3 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background: rgba(255,255,255,0.03);
+    padding: 2rem;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    background: rgba(124,58,237,0.1);
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gray);
+    background: var(--darker);
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <h1>NYX 34612</h1>
+    <ul>
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/robot.html">Robot</a></li>
+        <li><a href="/meet.html">Team</a></li>
+        <li><a href="/sponsor.html">Sponsors</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+    <h2>FTC Team <span>Nyx 34612</span></h2>
+    <p>
+        We are a competitive FIRST Tech Challenge robotics team focused on innovation,
+        engineering excellence, and pushing the limits of autonomous and driver-controlled performance.
+    </p>
+    <a href="/meet.html" class="button">Meet the Team</a>
+</section>
+
+<section class="section">
+    <h3>What We Do</h3>
+    <div class="cards">
+        <div class="card">
+            <h4>Engineering</h4>
+            <p>Designing and building competition-ready robots with advanced control systems.</p>
+        </div>
+        <div class="card">
+            <h4>Programming</h4>
+            <p>Developing autonomous algorithms and precision control software.</p>
+        </div>
+        <div class="card">
+            <h4>Outreach</h4>
+            <p>Engaging our community through STEM workshops and mentorship programs.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <h3>2026–2027 Season</h3>
+    <p style="max-width:600px;margin:auto;color:var(--gray);">
+        Competing with innovation, precision, and teamwork. Follow our journey through qualifiers,
+        league meets, and championship events.
+    </p>
+</section>
+
+<footer>
+    © 2026 FTC Team Nyx 34612 | Built with ⚙️ and determination
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Outreach | FTC Nyx 34612</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#09090c;
+  --bg2:#11131a;
+  --panel:rgba(255,255,255,0.045);
+  --panel-strong:rgba(255,255,255,0.07);
+  --text:#e5e7eb;
+  --muted:#9ca3af;
+  --primary:#7c3aed;
+  --primary-soft:rgba(124,58,237,0.16);
+  --border:rgba(255,255,255,0.10);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:"Inter",sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(900px 500px at 15% 10%, rgba(124,58,237,0.18), transparent 60%),
+    radial-gradient(700px 450px at 85% 20%, rgba(124,58,237,0.10), transparent 55%),
+    linear-gradient(135deg, var(--bg), var(--bg2));
+  line-height:1.6;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+nav{
+  position:sticky;
+  top:0;
+  z-index:100;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:1.2rem 5%;
+  background:rgba(0,0,0,0.42);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,0.06);
+}
+
+.logo{
+  font-family:"Orbitron",sans-serif;
+  color:var(--primary);
+  font-size:1.2rem;
+  font-weight:700;
+  letter-spacing:0.08em;
+}
+
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:1.5rem;
+  flex-wrap:wrap;
+}
+
+nav a{
+  color:var(--text);
+  font-weight:500;
+  transition:0.2s;
+}
+
+nav a:hover,
+nav a.active{
+  color:var(--primary);
+}
+
+.hero{
+  padding:5rem 10% 3rem;
+  display:grid;
+  grid-template-columns:1.2fr 0.8fr;
+  gap:2rem;
+  align-items:center;
+}
+
+.eyebrow{
+  display:inline-block;
+  margin-bottom:1rem;
+  font-size:0.9rem;
+  font-weight:700;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--primary);
+  font-family:"Orbitron",sans-serif;
+}
+
+.hero h1{
+  font-family:"Orbitron",sans-serif;
+  font-size:clamp(2.4rem, 5vw, 4.4rem);
+  line-height:1.08;
+  margin-bottom:1rem;
+}
+
+.hero p{
+  color:var(--muted);
+  max-width:700px;
+  margin-bottom:1.4rem;
+  font-size:1.03rem;
+}
+
+.hero-actions{
+  display:flex;
+  gap:1rem;
+  flex-wrap:wrap;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:0.9rem 1.3rem;
+  border-radius:12px;
+  font-weight:700;
+  transition:0.2s ease;
+  border:1px solid transparent;
+}
+
+.btn-primary{
+  background:var(--primary);
+  color:white;
+}
+
+.btn-primary:hover{
+  transform:translateY(-2px);
+  background:#6d28d9;
+}
+
+.btn-secondary{
+  background:rgba(255,255,255,0.03);
+  border-color:var(--border);
+  color:var(--text);
+}
+
+.btn-secondary:hover{
+  transform:translateY(-2px);
+  border-color:rgba(124,58,237,0.45);
+  background:var(--primary-soft);
+}
+
+.hero-card{
+  background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+  border:1px solid var(--border);
+  border-radius:24px;
+  padding:1.3rem;
+  box-shadow:0 20px 60px rgba(0,0,0,0.25);
+}
+
+.hero-stats{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:1rem;
+}
+
+.stat{
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:18px;
+  padding:1rem;
+}
+
+.stat h3{
+  font-family:"Orbitron",sans-serif;
+  font-size:1.7rem;
+  color:var(--primary);
+  margin-bottom:0.2rem;
+}
+
+.stat p{
+  color:var(--muted);
+  font-size:0.92rem;
+  margin:0;
+}
+
+.section{
+  padding:4.5rem 10%;
+}
+
+.section-head{
+  max-width:760px;
+  margin-bottom:2rem;
+}
+
+.section-head h2{
+  font-family:"Orbitron",sans-serif;
+  font-size:2rem;
+  margin-bottom:0.7rem;
+}
+
+.section-head p{
+  color:var(--muted);
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+  gap:1rem;
+}
+
+.card{
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:22px;
+  padding:1.3rem;
+  transition:0.2s;
+}
+
+.card:hover{
+  transform:translateY(-4px);
+  border-color:rgba(124,58,237,0.45);
+  background:var(--primary-soft);
+}
+
+.card h3{
+  margin-bottom:0.55rem;
+  font-size:1.05rem;
+}
+
+.card p{
+  color:var(--muted);
+  font-size:0.95rem;
+}
+
+.timeline{
+  display:grid;
+  gap:1rem;
+}
+
+.timeline-item{
+  display:grid;
+  grid-template-columns:160px 1fr;
+  gap:1rem;
+  align-items:start;
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:22px;
+  padding:1.15rem 1.25rem;
+}
+
+.timeline-date{
+  font-family:"Orbitron",sans-serif;
+  color:var(--primary);
+  font-size:0.95rem;
+}
+
+.timeline-content h3{
+  margin-bottom:0.4rem;
+}
+
+.timeline-content p{
+  color:var(--muted);
+  font-size:0.95rem;
+}
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+  gap:1rem;
+}
+
+.gallery-card{
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:22px;
+  overflow:hidden;
+  transition:0.2s;
+}
+
+.gallery-card:hover{
+  transform:translateY(-4px);
+  border-color:rgba(124,58,237,0.45);
+}
+
+.gallery-image{
+  height:180px;
+  background:
+    linear-gradient(135deg, rgba(124,58,237,0.24), rgba(255,255,255,0.03)),
+    rgba(255,255,255,0.02);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#ddd6fe;
+  font-family:"Orbitron",sans-serif;
+  font-size:1rem;
+  letter-spacing:0.06em;
+}
+
+.gallery-body{
+  padding:1rem 1.1rem 1.2rem;
+}
+
+.gallery-body h3{
+  margin-bottom:0.45rem;
+}
+
+.gallery-body p{
+  color:var(--muted);
+  font-size:0.94rem;
+}
+
+.quote{
+  background:linear-gradient(180deg, rgba(124,58,237,0.14), rgba(255,255,255,0.03));
+  border:1px solid rgba(124,58,237,0.26);
+  border-radius:26px;
+  padding:2rem;
+}
+
+.quote p{
+  font-size:1.1rem;
+  color:#ddd6fe;
+  margin-bottom:0.8rem;
+}
+
+.quote span{
+  color:var(--muted);
+}
+
+.cta{
+  margin:0 10% 4.5rem;
+  padding:2rem;
+  border-radius:28px;
+  border:1px solid rgba(124,58,237,0.28);
+  background:linear-gradient(180deg, rgba(124,58,237,0.16), rgba(255,255,255,0.035));
+}
+
+.cta h2{
+  font-family:"Orbitron",sans-serif;
+  font-size:1.8rem;
+  margin-bottom:0.8rem;
+}
+
+.cta p{
+  color:var(--muted);
+  max-width:780px;
+  margin-bottom:1.2rem;
+}
+
+.cta-box{
+  display:flex;
+  gap:1rem;
+  flex-wrap:wrap;
+}
+
+.contact-chip{
+  padding:0.85rem 1rem;
+  border-radius:14px;
+  background:rgba(0,0,0,0.22);
+  border:1px solid rgba(255,255,255,0.10);
+  color:#ddd6fe;
+  font-weight:600;
+}
+
+footer{
+  padding:2rem 10%;
+  text-align:center;
+  color:var(--muted);
+  border-top:1px solid rgba(255,255,255,0.06);
+  background:rgba(0,0,0,0.22);
+}
+
+@media (max-width: 950px){
+  .hero{
+    grid-template-columns:1fr;
+  }
+}
+
+@media (max-width: 760px){
+  .timeline-item{
+    grid-template-columns:1fr;
+  }
+}
+
+@media (max-width: 640px){
+  nav{
+    padding:1rem 6%;
+  }
+
+  .hero,
+  .section{
+    padding-left:6%;
+    padding-right:6%;
+  }
+
+  .cta,
+  footer{
+    margin-left:6%;
+    margin-right:6%;
+    padding-left:6%;
+    padding-right:6%;
+  }
+
+  .hero-stats{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">NYX 34612</div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="robot.html">Robot</a></li>
+    <li><a href="team.html">Team</a></li>
+    <li><a href="outreach.html" class="active">Outreach</a></li>
+    <li><a href="sponsor.html">Sponsors</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div>
+    <div class="eyebrow">Beyond Competition</div>
+    <h1>Outreach at <span style="color:var(--primary)">Nyx</span></h1>
+    <p>
+      FTC Team Nyx 34612 believes robotics is bigger than the field. Our outreach program is about sharing STEM,
+      mentoring younger students, connecting with our community, and making engineering feel exciting, accessible,
+      and real.
+    </p>
+    <p>
+      From demonstrations and workshops to mentorship and volunteering, we use outreach to inspire future builders
+      and show how robotics can create lasting impact beyond a single season.
+    </p>
+    <div class="hero-actions">
+      <a href="#events" class="btn btn-primary">See Our Events</a>
+      <a href="#get-involved" class="btn btn-secondary">Get Involved</a>
+    </div>
+  </div>
+
+  <div class="hero-card">
+    <div class="hero-stats">
+      <div class="stat">
+        <h3>10+</h3>
+        <p>Outreach events, demos, and workshops each season.</p>
+      </div>
+      <div class="stat">
+        <h3>100+</h3>
+        <p>Students, families, and community members reached.</p>
+      </div>
+      <div class="stat">
+        <h3>5+</h3>
+        <p>Partner schools, clubs, or organizations engaged.</p>
+      </div>
+      <div class="stat">
+        <h3>1 Mission</h3>
+        <p>Make STEM welcoming, hands-on, and inspiring.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <h2>What Outreach Means to Us</h2>
+    <p>
+      You can keep this section general, or replace it with your real team values and initiatives.
+    </p>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <h3>STEM Access</h3>
+      <p>
+        We introduce students to robotics, programming, design, and engineering through approachable,
+        hands-on experiences.
+      </p>
+    </div>
+    <div class="card">
+      <h3>Mentorship</h3>
+      <p>
+        We support younger students and newer teams by sharing knowledge, answering questions, and helping
+        them grow with confidence.
+      </p>
+    </div>
+    <div class="card">
+      <h3>Community Engagement</h3>
+      <p>
+        We bring robotics into schools, events, and public spaces to show that innovation can start anywhere.
+      </p>
+    </div>
+    <div class="card">
+      <h3>Lasting Impact</h3>
+      <p>
+        Our goal is not just to demonstrate a robot, but to leave people excited to learn, create, and build.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="events">
+  <div class="section-head">
+    <h2>Featured Outreach Events</h2>
+    <p>
+      Replace these with your actual outreach events, dates, and descriptions.
+    </p>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-date">September</div>
+      <div class="timeline-content">
+        <h3>STEM Night Demo</h3>
+        <p>
+          Nyx showcased our robot to students and families, explained how FTC works, and gave attendees a chance
+          to see engineering concepts in action.
+        </p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">October</div>
+      <div class="timeline-content">
+        <h3>Middle School Robotics Workshop</h3>
+        <p>
+          Team members led a beginner-friendly workshop introducing basic mechanisms, coding ideas, and the design
+          process behind competitive robotics.
+        </p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">November</div>
+      <div class="timeline-content">
+        <h3>Community Maker Fair</h3>
+        <p>
+          We shared our robot, outreach materials, and team story with local families, helping connect robotics to
+          creativity, problem-solving, and collaboration.
+        </p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">December</div>
+      <div class="timeline-content">
+        <h3>Mentoring Younger Students</h3>
+        <p>
+          Nyx members worked with younger robotics students, offering advice on strategy, build quality, and what
+          it takes to prepare for competition.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <h2>Outreach Highlights</h2>
+    <p>
+      This gallery-style section works well for photos later. Until the 2026-2027 season, nothing will be here.
+    </p>
+  </div>
+
+  <div class="gallery">
+    <div class="gallery-card">
+      <div class="gallery-image">PHOTO / EVENT 01</div>
+      <div class="gallery-body">
+        <h3>School Demonstration</h3>
+        <p>
+          Introducing younger students to robotics through live demos, team stories, and hands-on interaction.
+        </p>
+      </div>
+    </div>
+
+    <div class="gallery-card">
+      <div class="gallery-image">PHOTO / EVENT 02</div>
+      <div class="gallery-body">
+        <h3>Workshop Session</h3>
+        <p>
+          Teaching students how engineering starts with iteration, testing, and learning from failure.
+        </p>
+      </div>
+    </div>
+
+    <div class="gallery-card">
+      <div class="gallery-image">PHOTO / EVENT 03</div>
+      <div class="gallery-body">
+        <h3>Public Showcase</h3>
+        <p>
+          Sharing our robot and mission with the wider community at a public STEM or maker-focused event.
+        </p>
+      </div>
+    </div>
+
+    <div class="gallery-card">
+      <div class="gallery-image">PHOTO / EVENT 04</div>
+      <div class="gallery-body">
+        <h3>Mentorship</h3>
+        <p>
+          Helping newer students and teams grow their skills, confidence, and passion for robotics.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="quote">
+    <p>
+      “Outreach is how we turn our passion for robotics into something bigger—something that reaches other students,
+      strengthens our community, and inspires the next generation of builders.”
+    </p>
+    <span>— FTC Team Nyx 34612</span>
+  </div>
+</section>
+
+<section class="cta" id="get-involved">
+  <h2>Work With Nyx</h2>
+  <p>
+    Interested in inviting FTC Team Nyx 34612 to a school event, workshop, community showcase, or STEM night?
+    We’d love to connect. Outreach is one of the ways we share what robotics can do, and we’re always excited
+    to collaborate with schools, organizations, and local programs.
+  </p>
+
+  <div class="cta-box">
+    <a class="btn btn-primary" href="mailto:teamnyx34612@email.com">Contact Us</a>
+    <a class="btn btn-secondary" href="team.html">Meet the Team</a>
+    <div class="contact-chip">teamnyx34612@email.com</div>
+  </div>
+</section>
+
+<footer>
+  © 2026 FTC Team Nyx 34612
+</footer>
+
+</body>
+</html>
